@@ -16,33 +16,13 @@ def calc_bmi():
     with open(output_file_name, "w", encoding="UTF-8", newline="") as output_file:      #쓰기모드로 열어서 json.dump로 직렬화
         bmi_list = {}
         bmi_list['BMI'] = []
-        # hap=0.0
-        # avg_man=0.0
-        # avg_woman=0.0
-        # hap2=0.0
-        # count=0
-        # count2=0
 
-        # for data2 in healthCheckup.find():
-        #     if data2['성별코드'] == "1":  #남자일때
-        #         if(str(data2['허리둘레'])!=''):
-        #             hap+=float(str(data2['허리둘레']))
-        #         else:
-        #             count=count+1
-        #     else:
-        #         if (str(data2['허리둘레']) != ''):
-        #             hap2 +=float(str(data2['허리둘레']))
-        #         else:
-        #             count2=count2+1
-        #
-        # avg_man=hap/(len(data2)-count)
-        # avg_woman=hap2/(len(data2)-count2)
 
 
         for data in healthCheckup.find():
             if data['성별코드'] == "1":
-                if data['허리둘레']!='':
-                    bmi_list['BMI'].append({"성별": '남',
+                if data['허리둘레']!=''or float(data['허리둘레'])<=30:              #허리둘레 값이 없는 row과 30이하인 비정상 값을 가진 row는 제외
+                         bmi_list['BMI'].append({"성별": '남',
                                         "신장(cm)": int(data['신장(5Cm단위)']),
                                         "체중(kg)": int(data['체중(5Kg 단위)']),
                                         "허리둘레": float(data['허리둘레']),
@@ -50,7 +30,7 @@ def calc_bmi():
                                                (int(data['신장(5Cm단위)']) * int(data['신장(5Cm단위)'])),1),
                                         })
             else:
-                if data['허리둘레']!='':
+                if data['허리둘레']!=''or float(data['허리둘레'])<=30:
                      bmi_list['BMI'].append({"성별": '여',
                                         "신장(cm)": int(data['신장(5Cm단위)']),
                                         "체중(kg)": int(data['체중(5Kg 단위)']),

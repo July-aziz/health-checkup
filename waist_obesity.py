@@ -12,10 +12,7 @@ obesity = db.obesity
 
 #################################################################
 # bmi별 허리둘레평균 구하는 쿼리
-query1={{'BMI':{'$lte':18.5}},{'_id':0,'허리둘레':1}}
-query2=[{'$group':{'_id':'null','avg_waist':{'$avg':'$허리둘레'}}}
-        ,{'$match':{'$lte':18.5}}
-        ]
+
 # 저체중 평균 허리둘레
 query1 = obesity.aggregate([
     {'$match':{
