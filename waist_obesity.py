@@ -7,8 +7,8 @@ import time  # 인덱싱 전후 시간 비교를 위해서
 client = MongoClient("mongodb://localhost:27017/")
 db = client.healthcheck
 healthCheckup = db.health
-# obesity = db.obesity
-obesity = db.obesity_total
+obesity = db.obesity_waist
+# obesity = db.obesity_total
 
 start = time.time()  # 시작 시간 저장
 
