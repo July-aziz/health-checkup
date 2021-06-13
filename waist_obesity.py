@@ -2,11 +2,15 @@ from pymongo import MongoClient
 import pprint
 import plotly
 import plotly.graph_objects as go
+import time  # 인덱싱 전후 시간 비교를 위해서
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client.healthcheck
 healthCheckup = db.health
-obesity = db.obesity
+# obesity = db.obesity
+obesity = db.obesity_total
+
+start = time.time()  # 시작 시간 저장
 
 # 저체중 18.5 정상체중 23 과체중 25 경도비만 30 중정도비만 35 고도비만
 
@@ -461,6 +465,9 @@ query31 = obesity.aggregate([
         ])
 for x in query31:
     print(x)
+
+    
+print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
 
 #################################################################
 # 시각화 1. 비만도 별 허리둘레 평균
