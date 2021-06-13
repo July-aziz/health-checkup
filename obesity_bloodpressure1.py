@@ -1,9 +1,12 @@
 from pymongo import MongoClient
+import time  # 인덱싱 전후 시간 비교를 위해서
 
 client = MongoClient('localhost', 27017)
 db = client.july
 healthCheckup = db.health
 obesity_bloodpressure = db.obesity_bloodpressure
+
+start = time.time()  # 시작 시간 저장
 
 # # 최고-최저 확인
 s_q1=db.obesity_bloodpressure.aggregate([  # 수축기 혈압 최저
@@ -148,3 +151,5 @@ m_q9=db.obesity_bloodpressure.aggregate([
   {'$match':{"이완기 혈압":{'$gte':186, '$lte':205}}},
   {'$group':{'_id':'null', 'avg_BMI':{'$avg':'$수축기 혈압'}}}
 ])
+
+print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
