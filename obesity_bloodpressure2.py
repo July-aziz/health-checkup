@@ -1,4 +1,3 @@
-import chart_studio.plotly as py
 from plotly.graph_objs import Scatter, Bar, Figure, Data, Area, Histogram
 from pymongo import MongoClient
 import pymongo
@@ -24,7 +23,10 @@ trace1 = {
   "opacity": 0.6,
 }
 data = [trace1]
-layout = {"title": "수축기 혈압 & BMI",
+layout = {"title": {
+            "text": "수축기 혈압 & BMI",
+            "x": 0.5
+            },
           "xaxis.title": "수축기 혈압",
           "yaxis.title": "BMI",
           "showlegend": True,
@@ -41,7 +43,7 @@ layout = {"title": "수축기 혈압 & BMI",
             "bgcolor": "#fff",
             "traceorder": "normal",
             "bordercolor": "#000",
-            "borderwidth": 2
+            "borderwidth": 1
           }
 }
 fig = Figure(data, layout)

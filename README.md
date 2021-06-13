@@ -40,7 +40,7 @@
 
 실행 명령어 : `` python3 obesity-drinking_2.py ``
 
-![drink2](https://user-images.githubusercontent.com/48914904/121794478-6e47b380-cc43-11eb-9fe5-849200a7e3f6.png)
+![drink2](https://user-images.githubusercontent.com/48914904/121811813-8568be80-cca0-11eb-8671-d9938c50b0bf.png)
 
 ➔ 음주를 하지 않은 사람이 정상체중의 비율이 높고, 음주를 하는 사람은 과체중의 비율이 높다.
 
@@ -65,7 +65,7 @@ cf) 데이터 확인 쿼리
 
 실행 명령어 : `` python3 obesity_bloodpressure2.py ``
 
-![수축기&BMI](https://user-images.githubusercontent.com/48914872/121795518-97207680-cc4c-11eb-8ae9-d4604003e636.JPG)
+![수축기&BMI](https://user-images.githubusercontent.com/48914904/121811765-518d9900-cca0-11eb-88eb-f5a9aa98c375.png)
 
 ➔ 수축기 혈압이 높을수록 BMI평균이 높아지다가 마지막에 낮아진다.
 
@@ -75,7 +75,7 @@ cf) 데이터 확인 쿼리
 
 실행 명령어 : `` python3 obesity_bloodpressure3.py ``
 
-![이완기&BMI](https://user-images.githubusercontent.com/48914872/121795564-f8484a00-cc4c-11eb-9bbf-6a02d0a7e508.JPG)
+![이완기&BMI](https://user-images.githubusercontent.com/48914904/121811774-55b9b680-cca0-11eb-91e7-337d2c3bce60.png)
 
 ➔ 이완기 혈압이 높을수록 BMI평균이 높아지다가 마지막에 낮아진다.
 
@@ -85,7 +85,7 @@ cf) 데이터 확인 쿼리
 
 실행 명령어 : `` python3 obesity_bloodpressure4.py ``
 
-![이완기&수축기](https://user-images.githubusercontent.com/48914872/121795576-12822800-cc4d-11eb-8f00-73777a6e09da.JPG)
+![이완기&수축기](https://user-images.githubusercontent.com/48914904/121811778-58b4a700-cca0-11eb-89d5-d68714bc25f4.png)
 
 ➔ 이완기 혈압과 수축기 혈압이 비례하다.
 
@@ -107,13 +107,15 @@ cf) 데이터 확인 쿼리
 
 실행 명령어 : `` python3 waist_obesity.py ``
 
-![newplot (4)](https://user-images.githubusercontent.com/48914904/121802904-dfa25900-cc79-11eb-9416-e247bf8ececb.png)
+![newplot (2)](https://user-images.githubusercontent.com/48914904/121811738-3cb10580-cca0-11eb-9b78-9d15c3065e8e.png)
 
 ➔ 여자보단 남자의 허리둘레 평균이 더 크다. BMI지수가 높아질수록 허리둘레가 커진다.
 
 <br>
 
-![newplot (3)](https://user-images.githubusercontent.com/48914904/121802910-e5983a00-cc79-11eb-8ed6-dfcce80e5828.png)
+![newplot (3)](https://user-images.githubusercontent.com/48914904/121811683-19865600-cca0-11eb-8b13-d3bd9a239053.png)
+
+![newplot (4)](https://user-images.githubusercontent.com/48914904/121811697-2014cd80-cca0-11eb-98d5-9975b9f7101b.png)
 
 ➔ BMI지수가 높아질수록 평균 허리둘레보다 큰 사람이 많다.
 

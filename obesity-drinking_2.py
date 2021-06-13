@@ -19,7 +19,7 @@ cnt_1 = 0
 cnt_0 = 0
 
 # BMI 상관없이 음주를 하는 사람과 하지 않는 모든 사람 수를 세는 쿼리문(반복문)
-for data in obesity_drinking.find():
+for data in healthCheckup.find():
     if data['음주여부'] == "1":
         cnt_1 = cnt_1 + 1
     else:
@@ -149,7 +149,7 @@ Figure2.update_layout(
     paper_bgcolor='rgb(255, 255, 255)',
     plot_bgcolor='rgb(255, 252, 230)',
     width=1200,
-    height=600,
+    height=800,
     legend=dict(
         bordercolor='black',
         borderwidth=1,

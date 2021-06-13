@@ -502,6 +502,11 @@ layout = go.Layout(
     legend=dict(
         bordercolor='black',
         borderwidth=1,
+        orientation="v",
+        yanchor="top",
+        x=0.1,
+        y=0.95,
+        xanchor="center",
     ),
     width=900,
     height=900,
@@ -512,8 +517,8 @@ fig.show()
 
 # 시각화 2. 성별,bmi별 평균 허리둘레 기준으로 낮고 큼의 비율
 # 여성의 경우
-f2_1 = [97.81, 77.04, 36.41, 11.42, 0.66, 0.32]  # 평균보다 높은비율
-f2_2 = [2.19, 22.96, 63.59, 88.58, 99.34, 99.68]  # 평균보다 낮은비율
+f2_1 = [2.19, 22.96, 63.59, 88.58, 99.34, 99.68]  # 평균보다 높은비율
+f2_2 = [97.81, 77.04, 36.41, 11.42, 0.66, 0.32]  # 평균보다 낮은비율
 
 fig2 = go.Figure(data=[
     go.Bar(
@@ -530,16 +535,20 @@ fig2 = go.Figure(data=[
         marker=dict(
             color='rgb(247,225,225)'),
     )
-
 ])
 fig2.update_layout(
     barmode='stack',
     legend=dict(
         bordercolor='black',
         borderwidth=1,
+        orientation="h",
+        yanchor="top",
+        x=0.5,
+        y=-0.05,
+        xanchor="center",
     ),
     title=dict(
-        text='BMI별 평균 허리둘레 기준보다 낮고 큼의 비율',
+        text='여자 BMI별 평균 허리둘레 기준보다 낮고 큼의 비율',
         x=0.5,
         font=dict(
             size=20,
@@ -555,13 +564,44 @@ fig2.show()
 f3_1=[0.67,10.16,39.12,77.57,99.21,99.91] #평균보다 높은비율
 f3_2=[99.33,89.84,60.88,22.43,0.79,0.09] #평균보다 낮은비율
 
-
-fig3=go.Figure(data=[
-    go.Bar(name='평균 허리둘레보다 큰 비율',x=x,y=f3_1),
-    go.Bar(name='평균 허리둘레보다 작은 비율',x=x,y=f3_2)
-
+fig3 = go.Figure(data=[
+    go.Bar(
+        name='평균 허리둘레보다 큰 사람 비율',
+        x=x,
+        y=f3_1,
+        marker=dict(
+            color='rgb(210,245,250)'),
+    ),
+    go.Bar(
+        name='평균 허리둘레보다 작은 사람 비율',
+        x=x,
+        y=f3_2,
+        marker=dict(
+            color='rgb(247,225,225)'),
+    )
 ])
-fig3.update_layout(barmode='stack')
+fig3.update_layout(
+    barmode='stack',
+    legend=dict(
+        bordercolor='black',
+        borderwidth=1,
+        orientation="h",
+        yanchor="top",
+        x=0.5,
+        y=-0.05,
+        xanchor="center",
+    ),
+    title=dict(
+        text='남자 BMI별 평균 허리둘레 기준보다 낮고 큼의 비율',
+        x=0.5,
+        font=dict(
+            size=20,
+        ),
+    ),
+    width=900,
+    height=900,
+    plot_bgcolor='rgb(250, 250, 250)',
+)
 fig3.show()
 
 # waistRatioFigure = go.Figure()
