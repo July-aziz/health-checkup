@@ -48,6 +48,56 @@
 
 ---
 
+## 💓 혈압과 비만도 💓
+**1. 데이터 전처리 단계**
+
+비만도(BMI)를 계산하고 혈압(수축기 혈압/이완기 혈압)을 추출해서 새로운 collection에 저장한다.
+
+실행 명령어 : `` python3 preprocessing_bloodpressure.py ``
+
+<br>
+
+cf) 데이터 확인 쿼리
+
+실행 명령어 : `` python3 obesity_bloodpressure1.py ``
+
+<br>
+
+**2. 수축기 혈압과 BMI 평균 비교 그래프**
+
+실행 명령어 : `` python3 obesity_bloodpressure2.py ``
+
+![수축기&BMI](https://user-images.githubusercontent.com/48914872/121795518-97207680-cc4c-11eb-8ae9-d4604003e636.JPG)
+
+➔ 수축기 혈압이 높을수록 BMI평균이 높아지다가 마지막에 낮아진다.
+
+<br>
+
+**3. 이완기 혈압과 BMI 평균 비교 그래프**
+
+실행 명령어 : `` python3 obesity_bloodpressure3.py ``
+
+![이완기&BMI](https://user-images.githubusercontent.com/48914872/121795564-f8484a00-cc4c-11eb-9bbf-6a02d0a7e508.JPG)
+
+➔ 이완기 혈압이 높을수록 BMI평균이 높아지다가 마지막에 낮아진다.
+
+<br>
+
+**4. 수축기 혈압과 이완기 혈압 비교 그래프**
+
+실행 명령어 : `` python3 obesity_bloodpressure4.py ``
+
+![이완기&수축기](https://user-images.githubusercontent.com/48914872/121795576-12822800-cc4d-11eb-8f00-73777a6e09da.JPG)
+
+➔ 이완기 혈압과 수축기 혈압이 비례하다.
+
+
+⇒ 혈압이 높을수록 BMI평균이 높다가 마지막에 낮아진다.
+
+<br>
+
+---
+
 # 최적화
 ## 인덱싱(indexing)
 
