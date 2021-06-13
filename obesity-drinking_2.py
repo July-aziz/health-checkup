@@ -1,10 +1,14 @@
 from pymongo import MongoClient
 import plotly.graph_objects as go
+import time  # 인덱싱 전후 시간 비교를 위해서
 
 client = MongoClient('localhost', 27017)
 db = client.july
 healthCheckup = db.healthCheckup
-obesity_drinking = db.obesity_drinking
+# obesity_drinking = db.obesity_drinking
+obesity_drinking = db.obesity_total
+
+start = time.time()  # 시작 시간 저장
 
 Figure2 = go.Figure()
 
@@ -85,6 +89,9 @@ query6 = obesity_drinking.aggregate([
     }
     }
 ])
+
+print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
+
 # print(query2.__dict__['_CommandCursor__data'])
 # drinking_by_bmi = query1.__dict__
 # print(drinking_by_bmi['_CommandCursor__data'])
