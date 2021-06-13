@@ -58,7 +58,7 @@ fig = ff.create_annotated_heatmap(
 
 fig.update_layout(
     title=dict(
-        text='검강검진 결과 상관분석',
+        text='검강검진 데이터 상관분석',
         x=0.5,
         font=dict(
             size=20,
