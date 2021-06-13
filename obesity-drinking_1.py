@@ -22,8 +22,8 @@ bmi_Avg_by_drinking = query.__dict__
 
 x = ['음주함', '음주안함', ]
 y = []
-y.append(bmi_Avg_by_drinking['_CommandCursor__data'][0]['평균BMI'])
-y.append(bmi_Avg_by_drinking['_CommandCursor__data'][1]['평균BMI'])
+y.append(round(bmi_Avg_by_drinking['_CommandCursor__data'][0]['평균BMI'], 2))
+y.append(round(bmi_Avg_by_drinking['_CommandCursor__data'][1]['평균BMI'], 2))
 Figure1 = go.Figure(data=[
     go.Bar(
         name='음주여부',
@@ -31,7 +31,7 @@ Figure1 = go.Figure(data=[
         y=y,
         text=y,
         textposition='outside',
-        marker_color='rgb(100, 100, 100)',
+        marker_color='rgb(184, 217, 188)',
     )
 ])
 Figure1.update_layout(
@@ -50,10 +50,10 @@ Figure1.update_layout(
         title='BMI',
         gridcolor='gray',
         gridwidth=1,
-        range=(15, 25),
+        range=(20, 25),
     ),
     paper_bgcolor='rgb(255, 255, 255)',
-    plot_bgcolor='rgb(245, 245, 245)',
+    plot_bgcolor='rgb(245, 255, 245)',
     width=600,
     height=600,
 )

@@ -90,18 +90,18 @@ query6 = obesity_drinking.aggregate([
 # print(drinking_by_bmi['_CommandCursor__data'])
 # 저체중 18.5 정상체중 23 과체중 25 경도비만 30 중정도비만 35 고도비만
 
-y_drinking_true.append(query1.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query1.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
-y_drinking_true.append(query2.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query2.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
-y_drinking_true.append(query3.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query3.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
-y_drinking_true.append(query4.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query4.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
-y_drinking_true.append(query5.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query5.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
-y_drinking_true.append(query6.__dict__['_CommandCursor__data'][0]['count']/cnt_1*100)
-y_drinking_false.append(query6.__dict__['_CommandCursor__data'][1]['count']/cnt_0*100)
+y_drinking_true.append(round(query1.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query1.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
+y_drinking_true.append(round(query2.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query2.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
+y_drinking_true.append(round(query3.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query3.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
+y_drinking_true.append(round(query4.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query4.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
+y_drinking_true.append(round(query5.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query5.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
+y_drinking_true.append(round(query6.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
+y_drinking_false.append(round(query6.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
 
 Figure2 = go.Figure(data=[
     go.Bar(
@@ -110,7 +110,7 @@ Figure2 = go.Figure(data=[
         y=y_drinking_true,
         text=y_drinking_true,
         textposition='outside',
-        marker_color='rgb(150, 150, 150)',
+        marker_color='rgb(252, 235, 170)',
     ),
     go.Bar(
         name='음주안함',
@@ -118,7 +118,7 @@ Figure2 = go.Figure(data=[
         y=y_drinking_false,
         text=y_drinking_false,
         textposition='outside',
-        marker_color='rgb(20, 20, 20)',
+        marker_color='rgb(252, 230, 150)',
     )
 ])
 Figure2.update_layout(
@@ -139,9 +139,18 @@ Figure2.update_layout(
         gridwidth=1,
     ),
     paper_bgcolor='rgb(255, 255, 255)',
-    plot_bgcolor='rgb(245, 245, 245)',
+    plot_bgcolor='rgb(255, 252, 230)',
     width=1200,
     height=600,
+    legend=dict(
+        bordercolor='black',
+        borderwidth=1,
+        orientation="v",
+        yanchor="top",
+        x=0.93,
+        y=0.95,
+        xanchor="center",
+    ),
 )
 
 Figure2.show()
