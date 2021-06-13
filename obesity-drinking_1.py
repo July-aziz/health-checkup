@@ -8,6 +8,7 @@ obesity_drinking = db.obesity_drinking
 
 Figure1 = go.Figure()
 
+# 음주여부에 따라 그룹을 나눠서 각 그룹의 평균 BMI를 구하는 퀴리
 query = obesity_drinking.aggregate([
     {'$group': {
         '_id': '$음주여부',
@@ -15,11 +16,10 @@ query = obesity_drinking.aggregate([
     }
     }
 ])
-# print(query.__dict__)
-# print(vars(query))
-bmi_Avg_by_drinking = query.__dict__
-# print(bmi_Avg_by_drinking['_CommandCursor__data'][0]['평균BMI'])
 
+bmi_Avg_by_drinking = query.__dict__
+
+# 음주여부별 BMI 평균 비교 그래프
 x = ['음주함', '음주안함', ]
 y = []
 y.append(round(bmi_Avg_by_drinking['_CommandCursor__data'][0]['평균BMI'], 2))

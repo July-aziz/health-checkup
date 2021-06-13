@@ -17,12 +17,16 @@ y_drinking_true = []
 y_drinking_false = []
 cnt_1 = 0
 cnt_0 = 0
-for data in healthCheckup.find():
+
+# BMI 상관없이 음주를 하는 사람과 하지 않는 모든 사람 수를 세는 쿼리문(반복문)
+for data in obesity_drinking.find():
     if data['음주여부'] == "1":
         cnt_1 = cnt_1 + 1
     else:
         cnt_0 = cnt_0 + 1
 
+# 저체중 18.5 정상체중 23 과체중 25 경도비만 30 중정도비만 35 고도비만
+# 각 BMI 구분별로 음주를 하는 사람과 하지 않는 사람 수를 세는 쿼리문
 query1 = obesity_drinking.aggregate([
     {'$match': {
         'BMI': {'$lt': 18.5}
@@ -92,11 +96,7 @@ query6 = obesity_drinking.aggregate([
 
 print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
 
-# print(query2.__dict__['_CommandCursor__data'])
-# drinking_by_bmi = query1.__dict__
-# print(drinking_by_bmi['_CommandCursor__data'])
-# 저체중 18.5 정상체중 23 과체중 25 경도비만 30 중정도비만 35 고도비만
-
+# 음주여부별 BMI비율 계산
 y_drinking_true.append(round(query1.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
 y_drinking_false.append(round(query1.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
 y_drinking_true.append(round(query2.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
@@ -110,6 +110,7 @@ y_drinking_false.append(round(query5.__dict__['_CommandCursor__data'][1]['count'
 y_drinking_true.append(round(query6.__dict__['_CommandCursor__data'][0]['count'] / cnt_1 * 100, 2))
 y_drinking_false.append(round(query6.__dict__['_CommandCursor__data'][1]['count'] / cnt_0 * 100, 2))
 
+# 음주여부별 BMI비율 비교 그래프
 Figure2 = go.Figure(data=[
     go.Bar(
         name='음주함',
