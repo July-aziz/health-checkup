@@ -8,7 +8,7 @@
 ![heatmap](https://user-images.githubusercontent.com/48914904/121794467-42c4c900-cc43-11eb-82ef-941d3d0c8758.png)
 
 ## 🍺 음주여부와 비만도 🍺
-1. 데이터 전처리 단계
+**1. 데이터 전처리 단계**
 
 비만도(BMI)를 계산하고 음주데이터를 추출해서 새로운 collection에 저장한다.
 
@@ -16,7 +16,7 @@
 
 <br>
 
-2. 음주여부별 BMI평균 비교 그래프
+**2. 음주여부별 BMI평균 비교 그래프**
 
 실행 명령어 : `` python3 obesity-drinking_1.py ``
 
@@ -26,7 +26,7 @@
 
 <br>
 
-3. 음주여부별 BMI 분포 비율 비교 그래프
+**3. 음주여부별 BMI 분포 비율 비교 그래프**
 
 실행 명령어 : `` python3 obesity-drinking_2.py ``
 
