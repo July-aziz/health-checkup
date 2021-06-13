@@ -551,6 +551,19 @@ fig2.update_layout(
 )
 fig2.show()
 
+#남성의 경우
+f3_1=[0.67,10.16,39.12,77.57,99.21,99.91] #평균보다 높은비율
+f3_2=[99.33,89.84,60.88,22.43,0.79,0.09] #평균보다 낮은비율
+
+
+fig3=go.Figure(data=[
+    go.Bar(name='평균 허리둘레보다 큰 비율',x=x,y=f3_1),
+    go.Bar(name='평균 허리둘레보다 작은 비율',x=x,y=f3_2)
+
+])
+fig3.update_layout(barmode='stack')
+fig3.show()
+
 # waistRatioFigure = go.Figure()
 #
 # waistRatioFigure.show()
