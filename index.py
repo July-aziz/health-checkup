@@ -6,7 +6,14 @@ healthCheckup = db.healthCheckup
 obesity_total = db.obesity_total
 
 # index
-db.obesity_total.create_index('BMI')  # 인덱싱
+db.obesity_drinking.create_index('BMI')  # 인덱싱 생성
+db.obesity_bloodpressure.create_index('수축기 혈압')  # 인덱싱 생성
+db.obesity_bloodpressure.create_index('이완기 혈압')  # 인덱싱 생성
+db.obesity_waist.create_index('BMI')  # 인덱싱 생성
+
+# db.obesity_drinking.drop_indexes()  # 인덱싱 삭제
+# db.obesity_bloodpressure.drop_indexes()  # 인덱싱 삭제
+# db.obesity_waist.drop_indexes()  # 인덱싱 삭제
 
 
 ###### mongo에서 쿼리 하나당 실행속도 비교하는 코드
