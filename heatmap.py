@@ -1,14 +1,5 @@
-from pymongo import MongoClient
-import plotly.graph_objects as go
-import plotly.express as px
 import plotly.figure_factory as ff
 import pandas as pd
-import seaborn
-
-client = MongoClient('localhost', 27017)
-db = client.july
-healthCheckup = db.healthCheckup
-obesity_drinking = db.obesity_drinking
 
 df = pd.read_csv('./data/국민건강보험공단_건강검진정보_20191231.txt')
 # df.info()
