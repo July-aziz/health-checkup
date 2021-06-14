@@ -17,6 +17,8 @@
 
 ![heatmap](https://user-images.githubusercontent.com/48914904/121794467-42c4c900-cc43-11eb-82ef-941d3d0c8758.png)
 
+![newplot (9)](https://user-images.githubusercontent.com/48914904/121915866-94b63d80-cd6e-11eb-9392-527c128b1f7e.png)
+
 ## 🍺 음주여부와 비만도 🍺
 **1. 데이터 전처리 단계**
 
