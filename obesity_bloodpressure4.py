@@ -5,7 +5,7 @@ import pymongo
 client = MongoClient('localhost', 27017)
 db = client.july
 healthCheckup = db.health
-obesity_bloodpressure = db.obesity_total
+obesity_bloodpressure = db.obesity_bloodpressure
 
 # 시각화 - 수축기 혈압 & 이완기 혈압
 trace1 = {
